@@ -1,2 +1,7 @@
 class ItemsController < ApplicationController
-end
+    def index
+      items = Item.all
+      render json: items, include: :user, status: :ok
+    end
+  end
+  
